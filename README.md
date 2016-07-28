@@ -3,6 +3,10 @@
 * [Git](#git)
     * [Forward Tips](#forward-tips)
     * [What happened](#what-happened-since-last-night)
+* [Alias](#terminal)
+    * [Linus](#linus)
+    * [M](#m)
+    * [Fuck](#fuck)
 * [Terminal](#terminal)
 
 ## Git
@@ -155,6 +159,16 @@ git tag
 git tag -l 'v1.4.2.*'
 
 Cherry pick test i 1.0
+
+### Alias
+#### linus
+log --graph --oneline --color --decorate --abbrev-commit --all
+
+#### m
+!sh -c 'git checkout master && git pull'
+
+#### fuck
+!sh -c 'git rebase -i HEAD~ && git pull -f'
 
 ## Terminal
 Show hidden files
