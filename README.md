@@ -109,8 +109,12 @@ Formatera commits själv med "format"
 ```git tag```
 
 #### Config
+Open in vim
 ```git config --global --edit```
+
+Set alias from terminal
 ```git config --global alias.aliasnamehere "git command here remove git"```
+
 Ex: alias hello => git hello => git log --oneline
 ```git config --global alias.hello "log --oneline"``
 
