@@ -10,6 +10,7 @@
     * [Remote](#remote)
     * [Fetch](#fetch)
     * [Tag](#tag)
+    * [Config](#config)
         
 * [Alias](#terminal)
     * [Linus](#linus)
@@ -106,6 +107,13 @@ Formatera commits själv med "format"
 #### Tag
 ##### Show repo tags
 ```git tag```
+
+#### Config
+```git config --global --edit```
+```git config --global alias.aliasnamehere "git command here remove git"```
+Ex: alias hello => git hello => git log --oneline
+```git config --global alias.hello "log --oneline"``
+
 
 ### Alias
 #### linus
