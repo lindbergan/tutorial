@@ -1,9 +1,9 @@
 #Git & Terminal commands
 
-* [Git](#Git)
-* [Terminal](#Terminal)
+* [Git](#git)
+* [Terminal](#terminal)
 
-##Git
+## Git
 Forward tips
 git branch namn —no-ff
 
@@ -154,7 +154,7 @@ git tag -l 'v1.4.2.*'
 
 Cherry pick test i 1.0
 
-##Terminal
+## Terminal
 Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -boolean YES && killall Finder
 
