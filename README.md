@@ -1,13 +1,15 @@
 #Git & Terminal commands
 
 * [Git](#git)
+    * [Forward Tips](#forward-tips)
+    * [What happened](#what-happened-since-last-night)
 * [Terminal](#terminal)
 
 ## Git
-Forward tips
+#### Forward tips
 git branch namn —no-ff
 
-What happened since last night
+#### What happened since last night
 git whatchanged
 
 Remove last commit from github
