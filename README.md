@@ -39,12 +39,12 @@ git whatchanged
 git rebase -i HEAD~
 ```
 
-#### Remove last commit from Github
+##### Remove last commit from Github
 ```
 git rebase -i HEAD~ && push -f
 ```
 
-#### Add change to last commit (local)
+##### Add change to last commit (local)
 ```
 git commit —ammend —no-edit
 ```
