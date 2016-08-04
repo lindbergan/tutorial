@@ -24,36 +24,54 @@
 
 ## Git
 #### Forward tips
-``` git branch namn —no-ff ```
+```
+git branch namn —no-ff
+```
 
 #### What happened since last night
-``` git whatchanged ```
+```
+git whatchanged
+```
 
 #### Remove Commit
 ##### Remove last commit from local head
-``` git rebase -i HEAD~ ```
+```
+git rebase -i HEAD~
+```
 
 #### Remove last commit from Github
-``` git rebase -i HEAD~ && push -f ```
+```
+git rebase -i HEAD~ && push -f
+```
 
 #### Add change to last commit (local)
-``` git commit —ammend —no-edit ```
+```
+git commit —ammend —no-edit
+```
 
 #### Diff
 ##### Diff on all files
-``` git diff --cached ```
+```
+git diff --cached
+```
 
 ##### Diff on staged files
-``` git diff --staged ```
+```
+git diff --staged
+```
 
 #### Change Commit
-``` git commit --amend -m 'newmessagehere' ```
+```
+git commit --amend -m 'newmessagehere'
+```
 
 #### Git Log 
 Formatera commits själv med "format"
-``` git log --pretty=format:"%h - %an, %ar : %s" ```
+```
+git log --pretty=format:"%h - %an, %ar : %s"
+```
 
-##### Format Parameter:
+##### Format Parameters:
 | Option | Description |           
 | ------------- |-------------|
 | %H | Commit hash  |
@@ -73,9 +91,11 @@ Formatera commits själv med "format"
 | %s | Subject |
 
 ##### Ascii Graph
-``` git log --graph ```
+```
+git log --graph
+```
 
-##### Log Parametrar:
+##### Log Parameters:
 | Option | Description |           
 | ------------- |-------------|
 | -p | Show the patch introduced with each commit.|
@@ -94,54 +114,86 @@ Formatera commits själv med "format"
 | --committer | Only show commits in which the committer entry matches the specified string. |
 
 #### Remote
-``` git remote add origin [address] ```
-``` git push -u origin master ```
+```
+git remote add origin [address]
+```
+```
+git push -u origin master
+```
 
 #### Fetch
 ##### Get data from repo without merge
-``` git fetch [remote name] [branch name] ``` 
+```
+git fetch [remote name] [branch name]
+``` 
 
 ##### Get data from repo with merge
-``` git pull [remote name] [branch name] ``` 
+```
+git pull [remote name] [branch name]
+``` 
 
 #### Tag
 ##### Show repo tags
-``` git tag ```
+```
+git tag
+```
 
 #### Config
 Open in vim
 
-``` git config --global --edit ```
+```
+git config --global --edit
+```
 
 Set alias from terminal
 
-``` git config --global alias.aliasnamehere "git command here remove git" ```
+```
+git config --global alias.aliasnamehere "git command here remove git"
+```
 
 Ex: alias hello => git hello => git log --oneline
 
-``` git config --global alias.hello "log --oneline" ```
+```
+git config --global alias.hello "log --oneline"
+```
 
 ### Alias
 #### linus
-``` log --graph --oneline --color --decorate --abbrev-commit --all ```
+```
+log --graph --oneline --color --decorate --abbrev-commit --all
+```
 
 #### m
-``` !sh -c 'git checkout master && git pull' ```
+```
+!sh -c 'git checkout master && git pull'
+```
 
 #### fuck
-``` !sh -c 'git rebase -i HEAD~ && git pull -f' ```
+```
+!sh -c 'git rebase -i HEAD~ && git pull -f'
+```
 
 ## Terminal
 #### Show hidden files
-``` defaults write com.apple.finder AppleShowAllFiles -boolean YES && killall Finder ```
+```
+defaults write com.apple.finder AppleShowAllFiles -boolean YES && killall Finder
+```
 
 #### Kill dock
-``` defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock ```
+```
+defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
+```
 
 #### Access android emulator
 (Ex: Flickpicker project)
-``` adb -s emulator-5554 shell ```
+```
+adb -s emulator-5554 shell
+```
 
-``` cd data/data/com.typeof.flickpicker/database ```
+```
+cd data/data/com.typeof.flickpicker/database
+```
 
-``` sqlite3 flickpicker.db ```
+```
+sqlite3 flickpicker.db
+```
