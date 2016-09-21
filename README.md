@@ -22,6 +22,8 @@
     * [Kill dock](#kill-dock)
     * [Access android emulator](#access-android-emulator)
 
+* [Vim](#vim)
+	* [Search and replace](#search-and-replace)
 ## Git
 #### Forward tips
 ```
@@ -197,3 +199,13 @@ cd data/data/com.typeof.flickpicker/database
 ```
 sqlite3 flickpicker.db
 ```
+
+## Vim
+
+### Search and replace
+#### Search and replace in lineselection
+x: word that you want to replace
+y: word that you want to replace it with
+```
+:s/x/y/g
+``` 
