@@ -1,75 +1,130 @@
-#Git & Terminal commands
+# Git & Terminal commands
 
 * [Git](#git)
-    * [Forward Tips](#forward-tips)
-    * [What happened](#what-happened-since-last-night)
-    * [Remove Commit](#remove-commit)
-    * [Diff](#diff)
-    * [Change Commit](#change-commit)
-    * [Log](#git-log)
-    * [Remote](#remote)
-    * [Fetch](#fetch)
-    * [Tag](#tag)
-    * [Config](#config)
-        
+
+
 * [Alias](#terminal)
-    * [Linus](#linus)
-    * [M](#m)
-    * [Fuck](#fuck)
-    
+
+
 * [Terminal](#terminal)
-    * [Show hidden files](#show-hidden-files)
-    * [Kill dock](#kill-dock)
-    * [Access android emulator](#access-android-emulator)
+
 
 * [Vim](#vim)
-	* [Search and replace](#search-and-replace)
 
 
 ## Git
-#### Forward tips
-```
-git branch namn —no-ff
-```
+
+### Stages
+1. Commited
+_Saved in the git repository database_
+2. Staged
+_Not saved in the database, waiting to be commited_
+3. Unstaged
+_Files that have been edited or are new but not added to staged state_
+
+#### Git init
+`git init`
+_Initializes a new git repository in the current folder_
+_Creates a hidden `.git/` folder in the repo_
+
+#### Git status
+_To check the status of the repository, see what files have been changed_
+
+`git status`
+_add an alias for this, you will use it very often. I use 'gs'._
+
+#### Git Add
+_Add the following files to staged state_
+
+`git add <file(s)>`
+
+`git add -A`
+_Adds all edited files in the repo_
+
+#### Git commit
+_Saves the edits as a commit to the database, it is now possible to revert back to this position in time_
+
+`git commit -m 'Commit description goes here'`
+_'-m' = message_
+
+`git commit -am 'Message'`
+_Adds all files and commits_
+
+`git commit -amend`
+_Adds new files to last commit, allows you to change the last commit message_
+
+`git commit --amend -m 'newmessagehere'`
+
+`git commit —-amend —no-edit`
+_Adds new changes to last commit without editing the commit message_
+
+#### Git reset
+`git reset HEAD <file(s)>`
+_Undo files from staged state_
+
+
+_Different from checkout because it keeps the changes but need to be added again_
+
+#### Remove Commit
+`git rebase -i HEAD~`
+_Remove last commit from local head_
+
+#### Git branch
+`git branch <branchname>`
+_Creates a new timeline for your repository. Now you need to go to that timeline with `git checkout`_
+
+#### Git checkout
+`git checkout <branchname>`
+_Changes to another timeline in the repository_
+
+`git checkout -b <branchname>`
+_Creates a new branchname and changes to that branch (timeline)_
+
+`git checkout -- <filename(s)>`
+_Resets the all changes to the file(s) to the state of the last commit_
+
+#### Git push
+`git push`
+_Pushes all local commits to the remote origin_
+
+`git push --set-upstream origin <branchname>`
+_Creates the remote for the repository and pushes to it_
+
+`git push -u origin <branchname>`
+
+_`-u` is short for `--set-upstream`_
+
+#### Git diff
+`git diff --cached`
+_difference of all files_
+
+`git diff --staged`
+_difference of all staged files_
+
+
+
+
+
+@TODO: Everything from this point and below is to be reformatted in the near future
+
+---
+
+
 
 #### What happened since last night
 ```
 git whatchanged
 ```
 
-#### Remove Commit
-##### Remove last commit from local head
-```
-git rebase -i HEAD~
-```
+
 
 ##### Remove last commit from Github
 ```
 git rebase -i HEAD~ && push -f
 ```
 
-##### Add change to last commit (local)
-```
-git commit —ammend —no-edit
-```
 
-#### Diff
-##### Diff on all files
-```
-git diff --cached
-```
-
-##### Diff on staged files
-```
-git diff --staged
-```
-
-#### Change Commit
-```
-git commit --amend -m 'newmessagehere'
-```
-
-#### Git Log 
+#### Git Log
 Formatera commits själv med "format"
 ```
 git log --pretty=format:"%h - %an, %ar : %s"
@@ -81,7 +136,7 @@ git log --pretty=format:"%h - %an, %ar : %s"
 | %H | Commit hash  |
 | %h | Abbreviated commit hash |
 | %T | Tree hash |
-| %t | Abbreviated tree hash | 
+| %t | Abbreviated tree hash |
 | %P | Parent hashes |
 | %p | Abbreviated parent hashes |
 | %an | Author name |
@@ -129,12 +184,12 @@ git push -u origin master
 ##### Get data from repo without merge
 ```
 git fetch [remote name] [branch name]
-``` 
+```
 
 ##### Get data from repo with merge
 ```
 git pull [remote name] [branch name]
-``` 
+```
 
 #### Tag
 ##### Show repo tags
@@ -210,4 +265,4 @@ x: word that you want to replace
 y: word that you want to replace it with
 ```
 :s/x/y/g
-``` 
+```
