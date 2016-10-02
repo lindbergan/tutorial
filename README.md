@@ -128,24 +128,6 @@ _difference of all staged files_
 `git log`
 _See all the commit history_
 
-**Log Parameters:**
-| Option | Description |           
-| ------------- |-------------|
-| -p | Show the patch introduced with each commit.|
-| --stat| centered      |
-| --shortstat | Display only the changed/insertions/deletions line from the --stat command. |
-| --name-only | Show the list of files modified after the commit information. |
-| --name-status | Show the list of files affected with added/modified/deleted information as well. |
-| --abbrev-commit | Show only the first few characters of the SHA-1 checksum instead of all 40. |
-| --relative-date | Display the date in a relative format (for example, "2 weeks ago") instead of using the full date format. |
-| --graph | Display an ASCII graph of the branch and merge history beside the log output. |
-| --pretty | Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format). |
-| -(n) | Show only the last n commits |
-| --since, --after | Limit the commits to those made after the specified date. |
-| --until, --before | Limit the commits to those made before the specified date. |
-| --author | Only show commits in which the author entry matches the specified string. |
-| --committer | Only show commits in which the committer entry matches the specified string. |
-
 ---
 
 ### Config
@@ -161,7 +143,9 @@ _Ex: alias hello => git hello => git log --oneline_
 
 `git config --global alias.hello "log --oneline"`
 
+
 ### Alias
+---
 #### linus
 ```
 log --graph --oneline --color --decorate --abbrev-commit --all
@@ -186,17 +170,18 @@ log --graph --oneline --color --decorate --abbrev-commit --all
 `git m = git checkout master`
 
 ## Terminal
-#### Show hidden files
+---
+**Show hidden files**
 ```
 defaults write com.apple.finder AppleShowAllFiles -boolean YES && killall Finder
 ```
 
-#### Kill dock
+**Kill dock**
 ```
 defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
 ```
 
-#### Access android emulator
+**Access android emulator**
 (Ex: Flickpicker project)
 ```
 adb -s emulator-5554 shell
@@ -211,11 +196,12 @@ sqlite3 flickpicker.db
 ```
 
 ## Vim
-
-### Search and replace
-#### Search and replace in lineselection
-x: word that you want to replace
-y: word that you want to replace it with
+---
+**Search and replace**
 ```
 :s/x/y/g
 ```
+_Search and replace in lineselection_
+
+x: word that you want to replace
+y: word that you want to replace it with
