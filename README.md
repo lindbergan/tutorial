@@ -69,6 +69,11 @@ _Different from checkout because it keeps the changes but need to be added again
 `git rebase -i HEAD~`
 _Remove last commit from local head_
 
+
+`git reset HEAD~`
+_Remove last commit but keep changes_
+
+
 #### Git branch
 `git branch <branchname>`
 _Creates a new timeline for your repository. To go to that timeline you need to use `git checkout`._
