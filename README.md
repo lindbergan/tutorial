@@ -548,5 +548,5 @@ Shows the current java virtual machines processes.
 To kill process use id (in this case 36340).
 
 ```
-➜ ~ kill 3640
+➜ ~ kill 36340
 ```
