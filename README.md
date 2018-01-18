@@ -564,7 +564,7 @@ clear
 python startup.py
 ```
 
-Here is the startup python script: [startup.py]("startup/startup.py")
+Here is the startup python script: [startup.py](startup/startup.py "Startup python script")
 
 To get it to autostart on Mac: </br>
 ![Mac autostart](pictures/macautostart.png)
