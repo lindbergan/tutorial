@@ -22,6 +22,7 @@ Content:
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
+* [JPS](#jps)
 
 
 Git:
