@@ -23,6 +23,7 @@ Content:
 * [Terminal](#terminal)
 * [Vim](#vim)
 * [JPS](#jps)
+* [Scripts](#scripts)
 
 
 Git:
