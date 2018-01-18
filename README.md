@@ -12,7 +12,8 @@ Content:
 * [Vim](#vim)
 
 
-### Git
+Git:
+-----
 Stages:
 1. Commited: </br>
 _Saved in the git repository database_
@@ -24,7 +25,8 @@ _Not saved in the database, waiting to be commited_
 _New files or files that have been edited but not staged_
 
 
-### Start:
+Start:
+-----
 To start with Git you must first start a repository. This is done with the `git init` command in the folder you want to create a repository in.
 </br> _Note: some things might look different because I use a theme in my terminal but the content should be the same._
 
@@ -348,8 +350,8 @@ _Ex: alias hello => git hello => git log --oneline_
 `git config --global alias.hello "log --oneline"`
 
 
-### Alias
----
+Alias
+-----
 #### linus
 ```
 log --graph --oneline --color --decorate --abbrev-commit --all
@@ -373,8 +375,8 @@ log --graph --oneline --color --decorate --abbrev-commit --all
 
 `git m = git checkout master`
 
-## Terminal
----
+Terminal
+-----
 **Show hidden files**
 ```
 defaults write com.apple.finder AppleShowAllFiles -boolean YES && killall Finder
@@ -399,8 +401,8 @@ cd data/data/com.typeof.flickpicker/database
 sqlite3 flickpicker.db
 ```
 
-## Vim
----
+Vim
+-----
 **Search and replace**
 ```
 :s/x/y/g
