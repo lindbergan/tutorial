@@ -465,6 +465,7 @@ alias ztart-dev="open chrome && open spotify"
 # Other stuff
 alias linus="log --graph --oneline --color --decorate --abbrev-commit --all"
 alias fuck="!sh -c 'git rebase -i HEAD~ && git pull -f'"
+alias justpush="git commit -a -m 'stuff' && git push"
 ```
 
 Terminal
