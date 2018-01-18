@@ -18,6 +18,7 @@ Content:
     - [Git fetch](#pull-and-fetch)
     - [Git pull](#pull-and-fetch)
   - [Workflow](#workflow)
+* [Git config](#git-config)
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
@@ -496,11 +497,41 @@ sqlite3 flickpicker.db
 
 Vim
 -----
-**Search and replace**
+**Start editing:**
+```
+i
+```
+**Stop editing:**
+```
+esc
+```
+**Save:**
+```
+:w
+```
+**Quit:**
+```
+:q
+:!q (sometimes you need to overwrite so you do that with ! before q)
+```
+**Copy:**
+```
+CTRL+V
+```
+**Paste:**
+```
+P
+```
+**Search and replace:**
 ```
 :s/x/y/g
 ```
 _Search and replace in lineselection_
 
-x: word that you want to replace
+```
+:%s/x/y/g
+```
+_Search and replace in all lines_
+
+x: word that you want to replace </br>
 y: word that you want to replace it with
