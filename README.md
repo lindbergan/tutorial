@@ -5,6 +5,8 @@ This repo handles mainly Git but it also contains some good2know commands and th
 Content:
 ----
 * [Git](#git)
+  - [Start](#Start)
+  - [Workflow](#Workflow)
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
@@ -22,7 +24,7 @@ _Not saved in the database, waiting to be commited_
 _New files or files that have been edited but not staged_
 
 
-Starting: </br>
+### Start:
 To start with Git you must first start a repository. This is done with the `git init` command in the folder you want to create a repository in.
 </br> _Note: some things might look different because I use a theme in my terminal but the content should be the same._
 
@@ -218,15 +220,6 @@ Switched to branch 'name'
 You are now on your branch. As you can see on the last line it is shown that I am currently on the branch called name in `git:(name)`.
 
 
-
-
-
-
-
-
-
-
-
 Workflow
 -----
 What I think is the correct workflow. The pictures are from:
@@ -269,7 +262,7 @@ Fast-forward
 ```
 
 `c8b452a..57b0af7` means that we were on `c8b452a` commit and we are now on commit `57b0af7`.
-`newfileagain.txt` was a file I created to make another change so that I could merge two different branches. 
+`newfileagain.txt` was a file I created to make another change so that I could merge two different branches.
 
 After merge:
 ![After merge](pictures/mergename.png "After merge")
