@@ -6,9 +6,9 @@ Content:
 ----
 * [Git](#git)
   - [Start](#start)
-    - [Git init](#git init)
-    - [Git status](#git status)
-    - [Git add](#git add)
+    - [Git init](#git\ init)
+    - [Git status](#git%20status)
+    - [Git add](#git\ add)
     - [Git commit](#git commit)
     - [Git log](#git log)
     - [Git branch](#git branch)
