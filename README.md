@@ -535,3 +535,13 @@ _Search and replace in all lines_
 
 x: word that you want to replace </br>
 y: word that you want to replace it with
+
+JPS
+-----
+Shows the current java virtual machines processes.
+```
+➜ ~ jps -l
+36340 sun.tools.jps.Jps
+```
+
+To kill process use id (in this case 36340).
