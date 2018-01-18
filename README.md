@@ -218,6 +218,69 @@ Switched to branch 'name'
 You are now on your branch. As you can see on the last line it is shown that I am currently on the branch called name in `git:(name)`.
 
 
+
+
+
+
+
+
+
+
+
+Workflow
+-----
+What I think is the correct workflow. The pictures are from:
+[LearnGitBranching](https://learngitbranching.js.org/)
+
+Initial state:
+![Init state](pictures/initstate.png "Initial state")
+
+As you can see here we are on a branch `name` and we have another branch  `master`. We are currently on `name`.
+
+To get the latest changes from `master` to `name` we use the `git rebase` command.
+
+```
+➜ testfolder git:(name) git rebase master
+```
+After rebase:
+![After rebase](pictures/rebasemaster.png "After rebase")
+
+Now you can see that we are on `name` branch and we have retrieved the changes that we didn't have from `master`. To get `master` to where we are now we use the `git checkout` command and `git merge`.
+
+```
+➜ testfolder git:(name) git checkout master
+Switched to branch 'master'
+
+➜ testfolder git:(master)
+```
+
+After checkout:
+![After checkout](pictures/checkoutmaster.png "After checkout")
+
+```
+➜ testfolder git:(master) git merge name
+Updating c8b452a..57b0af7
+Fast-forward
+ newfileagain.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newfileagain.txt
+
+➜ testfolder git:(master)
+```
+
+`c8b452a..57b0af7` means that we were on `c8b452a` commit and we are now on commit `57b0af7`.
+`newfileagain.txt` was a file I created to make another change so that I could merge two different branches. 
+
+After merge:
+![After merge](pictures/mergename.png "After merge")
+
+
+
+
+
+
+
+
 #### Git reset
 `git reset HEAD <file(s)>`
 _Undo files from staged state_
