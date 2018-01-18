@@ -137,7 +137,7 @@ To check previous commits you can check the log with the `git log` command.
 
 ```
 commit c8b452acee6e408a0adc80356e7ac0fe3983230e (HEAD -> master)
-Author: Adrian Lindberg <adrlin@student.chalmers.se>
+Author: Adrian Lastname <email@example.com>
 Date:   Thu Jan 18 09:33:29 2018 +0100
 
     Test commit
