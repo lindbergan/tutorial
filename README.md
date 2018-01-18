@@ -5,8 +5,8 @@ This repo handles mainly Git but it also contains some good2know commands and th
 Content:
 ----
 * [Git](#git)
-  - [Start](#Start)
-  - [Workflow](#Workflow)
+  - [Start](#start)
+  - [Workflow](#workflow)
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
