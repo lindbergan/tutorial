@@ -135,7 +135,9 @@ Date:   Thu Jan 18 09:33:29 2018 +0100
 
 To exit `git log` type `q`.
 
-These are the most basic commands that you will use in your life. Here is a summary of the commands:
+These are the most basic commands that you will use in your life.
+
+Here is a summary of the commands:
 
 #### Git init
 `git init`
@@ -221,6 +223,93 @@ Switched to branch 'name'
 
 You are now on your branch. As you can see on the last line it is shown that I am currently on the branch called name in `git:(name)`.
 
+So far everything is stored locally on your computer, to save it on a remote place like Github you want to work with remotes. To connect your local repository with Github you must first create a Github repository.
+
+After you've done that you can connect the remote repository with the local one like this:
+
+```
+➜ testfolder git:(master) git remote add origin git@github.com:lindbergan/test.git
+
+➜ testfolder git:(master) git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 443 bytes | 443.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To github.com:lindbergan/test.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+The first command specifies that you want to add a new remote. `origin` is the name of the remote and `git@github.com:lindbergan/test.git` specifies where the repository is on the Github server.
+
+`git@github.com:lindbergan/test.git` could also be `https://github.com/lindbergan/test.git` depending on if you are using SSH or HTTPS.
+
+The second command `git push -u origin master` specifies that you want to save your commits on another server (in this case Github).
+
+To do this you use the command `git push` which pushes your branch to a remote remote repository.
+
+`-u` is short for `--set-upstream` which means that the current `master` branch will send commits when pushed to the remote `origin` and the branch `master` on the remote.
+
+Here is the summary for the new commands:
+
+#### Remote
+`git remote add <remote name> [url]`
+_Adds a new remote with name 'remote name' and url 'url'_
+
+_Remotes are used to backup data to a database. You can put (push) and get (pull / fetch) information from that database_
+
+#### Git push
+`git push`
+_Pushes all local commits to the remote_
+
+`git push --set-upstream origin <branchname>`
+_Creates the upstream remote for the repository and pushes to it_
+
+`git push -u origin <branchname>`
+
+_`-u` is short for `--set-upstream`_
+
+
+When you want to get changes someone else has done you use the `git pull` command. This pulls the changes from the remote repository and merges them to your local repository.
+
+```
+➜ testfolder git:(master) git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:lindbergan/test
+   57b0af7..9d813af  master     -> origin/master
+Updating 57b0af7..9d813af
+Fast-forward
+ newfile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+You could also use `git fetch`. The difference between `git pull` and `git fetch` is that `git fetch` does not merge the changes but gives you the option to do that yourself.
+
+#### Pull and Fetch
+**Fetch**
+
+`git fetch [remote name] [branch name]`
+_Get data from repo without merge_
+
+**Pull**
+
+`git pull [remote name] [branch name]`
+_Get data from repo with merge_
+
+
+
+
+
+
+
+
+
+
+
 
 Workflow
 -----
@@ -276,6 +365,18 @@ After merge:
 
 
 
+
+
+
+
+
+
+
+# Everything below is not yet tutorialised (new word) but works.
+
+
+
+
 #### Git reset
 `git reset HEAD <file(s)>`
 _Undo files from staged state_
@@ -294,33 +395,9 @@ _Remove last commit but keep changes_
 
 
 
-#### Remote
-`git remote add <remote name> [url]`
-_Adds a new remote with name 'remote name' and url 'url'_
 
-_Remotes are used to backup data to a database. You can put (push) and get (pull / fetch) information from that database_
 
-#### Git push
-`git push`
-_Pushes all local commits to the remote_
 
-`git push --set-upstream origin <branchname>`
-_Creates the upstream remote for the repository and pushes to it_
-
-`git push -u origin <branchname>`
-
-_`-u` is short for `--set-upstream`_
-
-#### Pull and Fetch
-**Fetch**
-
-`git fetch [remote name] [branch name]`
-_Get data from repo without merge_
-
-**Pull**
-
-`git pull [remote name] [branch name]`
-_Get data from repo with merge_
 
 #### Git diff
 `git diff HEAD^`
