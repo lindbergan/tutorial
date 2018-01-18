@@ -6,7 +6,19 @@ Content:
 ----
 * [Git](#git)
   - [Start](#start)
+    - [Git init](#git-init)
+    - [Git status](#git-status)
+    - [Git add](#git-add)
+    - [Git commit](#git-commit)
+    - [Git log](#git-log)
+    - [Git branch](#git-branch)
+    - [Git checkout](#git-checkout)
+    - [Git remote](#git-remote)
+    - [Git push](#git-push)
+    - [Git fetch](#pull-and-fetch)
+    - [Git pull](#pull-and-fetch)
   - [Workflow](#workflow)
+* [Git config](#git-config)
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
@@ -126,7 +138,7 @@ To check previous commits you can check the log with the `git log` command.
 
 ```
 commit c8b452acee6e408a0adc80356e7ac0fe3983230e (HEAD -> master)
-Author: Adrian Lindberg <adrlin@student.chalmers.se>
+Author: Adrian Lastname <email@example.com>
 Date:   Thu Jan 18 09:33:29 2018 +0100
 
     Test commit
@@ -300,11 +312,40 @@ _Get data from repo without merge_
 `git pull [remote name] [branch name]`
 _Get data from repo with merge_
 
+You have now learned everything that you need to successfully work with git both locally and remotely. I suggest you go through the [Workflow](#workflow) to get a better understanding how to work with git in projects with multiple people.
+
+To learn more about git I will go through some more commands:
+
+#### Git reset
+`git reset HEAD <file(s)>`
+_Undo files from staged state_
+
+
+_Different from checkout because it keeps the changes but need to be added again_
+
+#### Remove Commit
+`git rebase -i HEAD~`
+_Remove last commit from local head_
+
+
+`git reset HEAD~`
+_Remove last commit but keep changes_
 
 
 
 
+#### Git diff
+`git diff HEAD^`
+_See the difference in the last commit_
 
+`git diff <commit hash>`
+_Difference in that commit_
+
+`git diff --cached`
+_difference of all files_
+
+`git diff --staged`
+_difference of all staged files_
 
 
 
@@ -368,55 +409,24 @@ After merge:
 
 
 
+Git config
+----
 
+This is the git config file. The file exists at: `~/.gitconfig` or via the command `git config --global --edit`.
 
+```
+# This is Git's per-user configuration file.
+[user]
+	email = youremailhere@example.com
+	name = Your Name
+[core]
+	editor = vim
+[alias]
+```
 
+You can also set values from the terminal like this:
 
-# Everything below is not yet tutorialised (new word) but works.
-
-
-
-
-#### Git reset
-`git reset HEAD <file(s)>`
-_Undo files from staged state_
-
-
-_Different from checkout because it keeps the changes but need to be added again_
-
-#### Remove Commit
-`git rebase -i HEAD~`
-_Remove last commit from local head_
-
-
-`git reset HEAD~`
-_Remove last commit but keep changes_
-
-
-
-
-
-
-
-
-#### Git diff
-`git diff HEAD^`
-_See the difference in the last commit_
-
-`git diff <commit hash>`
-_Difference in that commit_
-
-`git diff --cached`
-_difference of all files_
-
-`git diff --staged`
-_difference of all staged files_
----
-
-### Config
-Open in vim
-
-`git config --global --edit`
+`git config --global user.email "email@example.com"`
 
 Set alias from terminal
 
@@ -429,28 +439,35 @@ _Ex: alias hello => git hello => git log --oneline_
 
 Alias
 -----
-#### linus
+
+Some aliases that I use:
+
 ```
-log --graph --oneline --color --decorate --abbrev-commit --all
+# Git
+alias go="git checkout"
+alias gs="git status"
+alias gl="git log"
+alias master="git checkout master"
+
+# Dev
+alias dev="cd ~/my-dev-folder/"
+
+# Naviation
+alias ds="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+
+# ZSH
+alias zshaliases="open $ZSH_CUSTOM/.aliases"
+alias zshrc="open ~/.zshrc"
+
+# Startup
+alias ztart-dev="open chrome && open spotify"
+
+# Other stuff
+alias linus="log --graph --oneline --color --decorate --abbrev-commit --all"
+alias fuck="!sh -c 'git rebase -i HEAD~ && git pull -f'"
+alias justpush="git commit -a -m 'stuff' && git push"
 ```
-
-#### fuck
-```
-!sh -c 'git rebase -i HEAD~ && git pull -f'
-```
-
-#### Branch aliases
-**sprint**
-
-`git sprint = git checkout sprint-xx`
-
-**dev**
-
-`git dev = git checkout feature-xx`
-
-**m**
-
-`git m = git checkout master`
 
 Terminal
 -----
@@ -480,11 +497,41 @@ sqlite3 flickpicker.db
 
 Vim
 -----
-**Search and replace**
+**Start editing:**
+```
+i
+```
+**Stop editing:**
+```
+esc
+```
+**Save:**
+```
+:w
+```
+**Quit:**
+```
+:q
+:!q (sometimes you need to overwrite so you do that with ! before q)
+```
+**Copy:**
+```
+CTRL+V
+```
+**Paste:**
+```
+P
+```
+**Search and replace:**
 ```
 :s/x/y/g
 ```
 _Search and replace in lineselection_
 
-x: word that you want to replace
+```
+:%s/x/y/g
+```
+_Search and replace in all lines_
+
+x: word that you want to replace </br>
 y: word that you want to replace it with
