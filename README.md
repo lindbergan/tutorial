@@ -22,6 +22,8 @@ Content:
 * [Alias](#terminal)
 * [Terminal](#terminal)
 * [Vim](#vim)
+* [JPS](#jps)
+* [Scripts](#scripts)
 
 
 Git:
@@ -535,3 +537,37 @@ _Search and replace in all lines_
 
 x: word that you want to replace </br>
 y: word that you want to replace it with
+
+JPS
+-----
+Shows the current java virtual machines processes.
+```
+➜ ~ jps -l
+36340 sun.tools.jps.Jps
+```
+
+To kill process use id (in this case 36340).
+
+```
+➜ ~ kill 36340
+```
+
+Scripts
+-----
+
+A startup script I made that lets you open multiple apps on computer startup. Can also be triggered manually but is usually used with autostart functionality in the computer.
+
+Bash script:
+```bash
+#!/bin/bash
+
+clear
+python startup.py
+```
+
+Here is the startup python script: [startup.py](startup/startup.py "Startup python script")
+
+To get it to autostart on Mac: </br>
+![Mac autostart](pictures/macautostart.png)
+
+Click the `+` under Users & Groups in System Preferences and select the bash script.
