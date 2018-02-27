@@ -571,3 +571,42 @@ To get it to autostart on Mac: </br>
 ![Mac autostart](pictures/macautostart.png)
 
 Click the `+` under Users & Groups in System Preferences and select the bash script.
+
+### Picture Downloader
+
+Python script:
+```python
+import os
+import urllib
+
+
+def download_picture(name, path, width, height, amount):
+    url = 'http://www.lorempixel.com/' + str(width) + '/' + str(height) + '/'
+    new_name = path + '/' + str(name) + '.png'
+    urllib.urlretrieve(url, new_name)
+
+
+print "#########################################"
+print "Hello, and welcome to Picture Downloader!"
+print "#########################################"
+
+path = raw_input("Enter path: (" + os.getcwd() + ")\n")
+if not path:
+    path = os.getcwd()
+width = raw_input("Enter width: (200)\n")
+if not width:
+    width = 200
+height = raw_input("Enter height: (200)\n")
+if not height:
+    height = 200
+amount = raw_input("How many pictures: (1)\n")
+if not amount:
+    amount = 1
+
+for x in range(1, int(amount)+1):
+    download_picture(x, path, int(width), int(height), int(amount))
+    print "Picture: " + str(x) + " is being downloaded."
+
+print "All pictures are finished downloading."
+
+```
