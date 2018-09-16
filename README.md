@@ -24,6 +24,7 @@ Content:
 * [Vim](#vim)
 * [JPS](#jps)
 * [Scripts](#scripts)
+* [GPG](#gpg)
 
 
 Git:
@@ -609,4 +610,11 @@ for x in range(1, int(amount)+1):
 
 print "All pictures are finished downloading."
 
+```
+
+GPG
+-----
+List GPG keys:
+```
+gpg --list-secret-keys --keyid-format LONG
 ```
