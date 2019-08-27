@@ -618,3 +618,11 @@ List GPG keys:
 ```
 gpg --list-secret-keys --keyid-format LONG
 ```
+
+Google Chrome
+-----
+
+Turn off swipe-previous:
+```
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+```
