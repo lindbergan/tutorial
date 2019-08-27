@@ -1,6 +1,6 @@
 Git tutorial
 ====
-This repo handles mainly Git but it also contains some good2know commands and the use of the terminal. Feel free to check it out and leave comments if you want to change something.
+This repo handles mainly Git but it also contains some good2know commands and the use of the terminal. 
 
 Content:
 ----
